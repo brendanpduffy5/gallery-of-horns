@@ -1,0 +1,9 @@
+.hornedBeasts{
+    /* display: flex; */
+    justify-content: space-between;
+    display: wrap;
+}
+
+main{
+    background-color:#19A7CE;
+}
