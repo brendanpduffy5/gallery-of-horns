@@ -10,16 +10,21 @@ class HornedBeast extends React.Component{
         }
     }
 
-    incrementHello = ( ) => {
+    incrementHello = () => {
         this.setState({
             helloCounter: this.state.helloCounter + 1
         })
     }
 
+    handleModalEvent = () => {
+        this.props.selectedBeast(this.props.hornedBeast);
+        this.props.showBeastModal();
+    }
+
     render (){
         return(
             <Card style={{width: '20rem'}}>
-                <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} height={250} />
+                <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} height={250} onClick={this.handleModalEvent} />
                 <Card.Body>
                 <Card.Title><h2>{this.props.title}</h2></Card.Title>
                 <Card.Text>
@@ -28,7 +33,6 @@ class HornedBeast extends React.Component{
                 
                 </Card.Text>
                 <Button variant="primary" onClick={this.incrementHello} >Say Hello!</Button>
-
                 </Card.Body>
             </Card>
         )

@@ -11,11 +11,15 @@ class Main extends React.Component{
         return(
             <Container>
             <Row className= "hornedBeasts">
-                {newData.map(beast =>
+                {newData.map((beast, idx) =>
                     <HornedBeast
                         title={beast.title}
                         image_url={beast.image_url}
                         description={beast.description}
+                        beast={beast}
+                        showBeastModal={this.props.showBeastModal}
+                        selectedBeast={this.props.selectedBeast}
+                        key={idx}
                     />
                 )}
             </Row>
